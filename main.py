@@ -968,14 +968,14 @@ class GameOver:
 
         # write to the csv file
         # SAN moves
-        with open("san_moves.csv", 'a') as csvfile:
+        with open("san_moves.csv", 'a', newline='\n') as csvfile:
             # create a csv writer object
             csvwriter = csv.writer(csvfile)
             # write the data
             csvwriter.writerow(SAN_MOVES)
 
         # UCI moves
-        with open("uci_moves.csv", 'a') as csvfile:
+        with open("uci_moves.csv", 'a', newline='\n') as csvfile:
             # create a csv writer object
             csvwriter = csv.writer(csvfile)
             # write the data
@@ -1078,7 +1078,7 @@ class Search:
                                         700,
                                         30,
                                         date,
-                                        length,
+                                        str(length),
                                         firstMoves,
                                         id,
                                         command=lambda: set_analysis(self, sortedIDs))
